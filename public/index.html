@@ -1,50 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Socket.IO Chat</title>
-    <style>
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-      li {
-        padding: 8px;
-        margin-bottom: 8px;
-        background: #f3f3f3;
-      }
-      input {
-        padding: 10px;
-        width: 80%;
-      }
-      button {
-        padding: 10px;
-      }
-    </style>
+    <title>Pavse Socket</title>
   </head>
   <body>
-    <ul id="messages"></ul>
-    <form id="form" action=""><input id="input" autocomplete="off" /><button>Send</button></form>
+    <div>
+      <hr />
+      <img id="image" src="" />
+      <hr />
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       const socket = io("/")
-      const form = document.getElementById("form")
-      const input = document.getElementById("input")
-      const messages = document.getElementById("messages")
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault()
-        if (input.value) {
-          socket.emit("users:create", input.value)
-          input.value = ""
-        }
-      })
-
-      socket.on("users:create", function (msg) {
-        const item = document.createElement("li")
-        item.textContent = msg
-        messages.appendChild(item)
-        window.scrollTo(0, document.body.scrollHeight)
+      socket.on("create:qrcode", function (packet) {
+        const img = document.querySelector("#image").setAttribute("src", packet)
       })
     </script>
   </body>

@@ -10,7 +10,11 @@
     "debug": "~2.6.9",
     "dotenv": "^16.0.1",
     "express": "^4.19.2",
-    "socket.io": "^4.7.5"
+    "mongoose": "^8.5.2",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.7.5",
+    "whatsapp-web.js": "^1.25.0",
+    "wwebjs-mongo": "^1.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
