@@ -1,0 +1,23 @@
+{
+  "name": "adaptable-socket.io",
+  "version": "1.0.0",
+  "description": "adaptable-socket.io",
+  "scripts": {
+    "dev": "nodemon ./src/index",
+    "start": "node ./src/index"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "nodemonConfig": {
+    "ext": "js,mjs,json,css,html,hbs"
+  },
+  "author": "karimroy",
+  "license": "ISC"
+}
