@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"))
 })
 
-io.of("/").on("connection", (socket) => {
+io.on("connection", (socket) => {
   // When the client is ready, run this code (only once)
 
   if (socket.connected) socket.emit("users:connected", {connected: true})
